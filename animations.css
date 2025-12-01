@@ -1,0 +1,81 @@
+/* ===========================
+   Animaciones generales
+=========================== */
+
+/* Fade-in suave para secciones */
+.fade-in {
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bounce divertido para botones */
+.boton {
+  animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* ===========================
+   Carrusel automático
+=========================== */
+.carousel .slide {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1s ease;
+}
+
+.carousel .active {
+  opacity: 1;
+  animation: fadeSlide 12s infinite;
+}
+
+@keyframes fadeSlide {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  40% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ===========================
+   Galería con slider
+=========================== */
+.slide-img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.slide-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ===========================
+   Player estilo Spotify
+=========================== */
+.player-fake {
+  animation: glow 5s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+  to { box-shadow: 0 0 25px rgba(255,255,255,0.6); }
+}
+
+/* ===========================
+   Footer animado
+=========================== */
+footer .redes img {
+  transition: transform 0.3s ease;
+}
+
+footer .redes img:hover {
+  transform: rotate(10deg) scale(1.2);
+}
