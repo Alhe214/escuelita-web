@@ -1,0 +1,439 @@
+/* ===========================
+   Reset básico
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-principal: #F97316;   /* naranja coral */
+  --color-secundario: #1E3A8A;  /* azul marino */
+  --color-fondo: #FFF7ED;       /* beige claro */
+  --color-texto: #3F3F46;       /* marrón oscuro */
+  --color-acento: #FBBF24;      /* dorado */
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+.navbar {
+  background: var(--color-principal);
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  font-family: 'Fredoka One', cursive;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background: var(--color-secundario);
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  background: var(--color-acento);
+  transform: scale(1.05);
+}
+
+/* ===========================
+   Hero
+=========================== */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--color-principal), var(--color-acento));
+  color: #fff;
+  position: relative;
+}
+
+.hero .logo {
+  max-width: 120px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero .subtitle {
+  font-size: 1.3em;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.hero .decoracion {
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+/* ===========================
+   Frase motivacional
+=========================== */
+.frase-motivacional {
+  text-align: center;
+  font-style: italic;
+  margin: 30px;
+  font-size: 1.4em;
+  color: var(--color-principal);
+}
+
+/* ===========================
+   Sección en cuadritos (grid)
+=========================== */
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  background: #fff;
+}
+
+.card {
+  background: var(--color-fondo);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-family: 'Fredoka One', cursive;
+  color: var(--color-secundario);
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   Sección alterna
+=========================== */
+.alt-section {
+  background: var(--color-principal);
+  padding: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.alt-section h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.alt-section p {
+  margin-bottom: 20px;
+}
+
+/* ===========================
+   Botones
+=========================== */
+.boton {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: var(--color-secundario);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  text-decoration: none;
+}
+
+.boton:hover {
+  transform: scale(1.05);
+  background-color: var(--color-acento);
+}
+
+/* ===========================
+   Footer
+=========================== */
+footer {
+  background: var(--color-principal);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer .redes img {
+  width: 30px;
+  margin: 0 10px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   Video responsivo
+=========================== */
+.intro video {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ===========================
+   Testimonios
+=========================== */
+.testimonios-section {
+  padding: 40px;
+  background: var(--color-fondo);
+  text-align: center;
+}
+
+.testimonios-section h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--color-principal);
+}
+
+.testimonios-carousel {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.testimonio {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1s ease;
+}
+
+.testimonio.active {
+  display: flex;
+}
+
+.testimonio img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.testimonio h3 {
+  color: var(--color-secundario);
+  margin-bottom: 10px;
+}
+
+.testimonio p {
+  font-style: italic;
+  max-width: 500px;
+  color: var(--color-texto);
+}
+
+/* Botones carrusel */
+.carousel-buttons {
+  margin-top: 20px;
+}
+
+.carousel-buttons button {
+  background: var(--color-principal);
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5em;
+  transition: background 0.3s;
+  color: #fff;
+}
+
+.carousel-buttons button:hover {
+  background: var(--color-secundario);
+}
+
+/* ===========================
+   Responsivo
+=========================== */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar li {
+    margin: 8px 0;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero .subtitle {
+    font-size: 1em;
+  }
+
+  .card {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .card img {
+    width: 60px;
+  }
+
+  .boton {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .testimonio img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .carousel-buttons button {
+    font-size: 1.2em;
+    padding: 8px 12px;
+  }
+}
+
+/* ===========================
+   Galería
+=========================== */
+.galeria-section {
+  padding: 40px;
+  background: #fff;
+  text-align: center;
+}
+
+.galeria-section h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--color-principal);
+}
+
+.galeria-slider {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+/* Botones galería */
+.galeria-buttons {
+  margin-top: 15px;
+}
+
+.galeria-buttons button {
+  background: var(--color-principal);   /* naranja coral */
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5em;
+  transition: background 0.3s, transform 0.2s;
+  color: #fff;
+}
+
+.galeria-buttons button:hover {
+  background: var(--color-acento);      /* dorado */
+  transform: scale(1.1);
+}
+
+/* Animaciones suaves */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.testimonios-especiales {
+  padding: 50px;
+  background: var(--color-fondo);
+  text-align: center;
+}
+
+.testimonios-especiales h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.2em;
+  margin-bottom: 30px;
+  color: var(--color-principal);
+}
+
+.testimonio-especial {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #fff;
+  border-left: 6px solid var(--color-acento);
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  font-style: italic;
+}
+
+.testimonio-especial h3 {
+  margin-top: 15px;
+  color: var(--color-secundario);
+  font-weight: bold;
+}
